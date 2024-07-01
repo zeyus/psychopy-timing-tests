@@ -1,0 +1,49 @@
+0.0003429998178035021 	INFO 	Starting animated square test
+0.0005311998538672924 	WARNING 	Monitor specification not found. Creating a temporary one...
+0.7639256999827921 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001C51B582500>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001C51B5824A0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1, -1, -1]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001C51B5822F0>, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001C51B582D10>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([2560, 1440]), stencilBits=0, stereo=False, title='PsychoPy', units='pix', useFBO=False, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+0.7639915000181645 	EXP 	window1: mouseVisible = True
+0.7640083997976035 	EXP 	window1: backgroundImage = None
+0.7640209000092 	EXP 	window1: backgroundFit = 'cover'
+0.7640342998784035 	INFO 	Mouse: using default window
+0.764065399998799 	EXP 	window1: mouseVisible = True
+0.7655999998096377 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+0.7656227999832481 	EXP 	window1: recordFrameIntervals = False
+0.93043929990381 	EXP 	window1: recordFrameIntervals = True
+1.1140033998526633 	EXP 	Screen (0) actual frame rate measured at 59.95Hz
+1.114030199823901 	EXP 	window1: recordFrameIntervals = False
+1.1141377999447286 	EXP 	window1: mouseVisible = True
+1.1153015999589115 	EXP 	Created unnamed PhotoDiodeSquare = PhotoDiodeSquare(__class__=<class 'pptt.blocks.shapes.PhotoDiodeSquare'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, draggable=False, fillColor=array([255, 255, 255]), fillColorSpace='rgb', fillRGB=array([255, 255, 255]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([255, 255, 255]), lineWidth=1.5, name='unnamed PhotoDiodeSquare', opacity=1.0, ori=0.0, pos=array([1230., -670.]), size=array([100., 100.]), units='pix', vertices=ndarray(...), win=Window(...))
+1.115387799916789 	EXP 	window1: mouseVisible = True
+1.116361299995333 	EXP 	Created unnamed Square = Square(__class__=<class 'pptt.blocks.shapes.Square'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, draggable=False, fillColor=array([255, 255, 255]), fillColorSpace='rgb', fillRGB=array([255, 255, 255]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([255, 255, 255]), lineWidth=1.5, name='unnamed Square', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([144., 144.]), units='pix', vertices=ndarray(...), win=Window(...))
+1.116494899848476 	DATA 	Animated Square test started
+1.11650689993985 	DATA 	Number of iterations: 10000
+1.116514999885112 	DATA 	Trigger every: 100
+1.1165239999536425 	DATA 	Screen resolution: (2560, 1440)
+1.1165314000099897 	DATA 	Port address: 888
+1.1185729999560863 	DATA 	Trigger high (interval) scheduled at 1.1305816899053753
+1.1312215998768806 	DATA 	Trigger low scheduled at 1.1472626897972078
+2.7854454999323934 	DATA 	Trigger high (interval) scheduled at 2.8013715899083764
+2.801889499882236 	DATA 	Trigger low scheduled at 2.8180391899310053
+3.5356455999426544 	DATA 	Mouse: Left button down, pos=(990,381)
+3.536371399881318 	DATA 	Trigger high (mouse) scheduled at 3.5519810900092126
+3.5364008999895304 	DATA 	Mouse click at 2.419093200005591
+3.552590899867937 	DATA 	Trigger low scheduled at 3.5686567899771036
+3.6023250999860466 	DATA 	Mouse:  Left button up, pos=(990,381)
+4.035969999851659 	DATA 	Mouse: Left button down, pos=(990,381)
+4.03675189986825 	DATA 	Trigger high (mouse) scheduled at 4.052395289903506
+4.03678369987756 	DATA 	Mouse click at 0.49954650015570223
+4.053106899838895 	DATA 	Trigger low scheduled at 4.069090089900419
+4.45354409981519 	DATA 	Trigger high (interval) scheduled at 4.4694108899217095
+4.469983899965882 	DATA 	Trigger low scheduled at 4.486078589828685
+5.954186999937519 	DATA 	Mouse:  Left button up, pos=(990,381)
+6.121597699820995 	DATA 	Trigger high (interval) scheduled at 6.137443890003487
+6.138065899955109 	DATA 	Trigger low scheduled at 6.1541454898193475
+7.071922299917787 	DATA 	Mouse: Left button down, pos=(990,381)
+7.072716099908575 	DATA 	Trigger high (mouse) scheduled at 7.088234489923343
+7.072746400022879 	DATA 	Mouse click at 3.035116200102493
+7.088823099853471 	DATA 	Trigger low scheduled at 7.1049243899993595
+7.155230199918151 	DATA 	Mouse:  Left button up, pos=(990,381)
+7.789644399890676 	DATA 	Trigger high (interval) scheduled at 7.805511689884588
+7.806043999968097 	DATA 	Trigger low scheduled at 7.822174089867621
+9.074037599842995 	DATA 	Keypress: escape
+9.152460099896416 	EXP 	window1: mouseVisible = True

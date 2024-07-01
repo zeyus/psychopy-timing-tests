@@ -14,7 +14,7 @@ class Port(ABC):
         pass
     
     @abstractmethod
-    def send_trigger(self, trigger_code: int):
+    async def asend_trigger(self, trigger_code: int):
         """Sends a trigger signal to the EEG system.
         
         Args:
@@ -22,6 +22,14 @@ class Port(ABC):
         """
         pass
 
+    @abstractmethod
+    async def send_trigger(self, trigger_code: int):
+        """Sends a trigger signal to the EEG system.
+        
+        Args:
+            trigger_code: The trigger code to send.
+        """
+        pass
 
 
 class ParallelPort(Port):
@@ -35,7 +43,7 @@ class ParallelPort(Port):
         """
         self.port = parallel.ParallelPort(port_addr)
 
-    async def send_trigger(self, trigger_code: int, duration: float = 0.001):
+    def send_trigger(self, trigger_code: int, duration: float = 0.001):
         """Sends a trigger signal to the EEG system.
         
         Args:
@@ -43,12 +51,20 @@ class ParallelPort(Port):
             duration: The duration of the trigger signal.
         """
         self.port.setData(trigger_code)
+
+    async def asend_trigger(self, trigger_code: int, duration: float = 0.001):
+        """Sends a trigger signal to the EEG system.
+        
+        Args:
+            trigger_code: The trigger code to send.
+            duration: The duration of the trigger signal.
+        """
+        
+        self.port.setData(trigger_code)
         await asyncio.sleep(duration)
         self.port.setData(0)
 
-    def __del__(self):
-        """Closes the parallel port."""
-        self.port.close()
+
 
 
 
@@ -68,7 +84,7 @@ class SerialPort(Port):
 
         self.port = Serial(port_addr, baudrate=baudrate, parity=parity, stopbits=stopbits, **kwargs)
 
-    async def send_trigger(self, trigger_code: int, duration: float = 0.001):
+    async def asend_trigger(self, trigger_code: int, duration: float = 0.001):
         """Sends a trigger signal to the EEG system.
         
         Args:
