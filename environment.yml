@@ -1,0 +1,12 @@
+name: PsychoPy-timings
+channels:
+  - cogsci
+  - conda-forge
+dependencies:
+  - pyserial
+  - python=3.10
+  - pip
+  - mamba
+  - pip:
+    - psychtoolbox
+    - psychopy
