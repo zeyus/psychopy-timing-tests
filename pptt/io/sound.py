@@ -62,19 +62,19 @@ class Note:
         if self.sound.isPlaying:
             self.sound.stop()
 
-class AsyncMic:
-    """Class for asynchronous microphone recording."""
+class Mic:
+    """Class for microphone recording."""
 
-    def __init__(self, duration: float = 1.0, sr: int = 44100, output_folder: Path = Path(os.getcwd()) / "recordings"):
+    def __init__(self, sr: int = 44100, output_folder: Path = Path(os.getcwd()) / "recordings"):
         """Initializes the microphone.
         
         Args:
-            duration: The duration of the recording in seconds.
             sr: The sample rate of the recording.
+            output_folder: The folder to save the recordings to.
         """
-        
-        self.duration = duration
+
         self.sr = sr
+        self.output_folder = output_folder
         self.mic = Microphone(
             sampleRateHz=sr,
             channels=1,
@@ -84,12 +84,19 @@ class AsyncMic:
     
     def record(self):
         """Records the sound."""
-        self.mic.record(self.duration)
+        self.mic.record()
     
     def get_data(self):
         """Gets the recorded data."""
         return self.mic.getRecording()
+    
+    def stop(self):
+        """Stops the recording."""
+        if self.mic.recording:
+            self.mic.stop()
 
     def __del__(self):
         """Closes the microphone."""
-        self.mic.stop()
+        if self.mic.recording:
+            self.mic.stop()
+        self.mic.close()

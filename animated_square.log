@@ -1,49 +1,153 @@
-0.0003429998178035021 	INFO 	Starting animated square test
-0.0005311998538672924 	WARNING 	Monitor specification not found. Creating a temporary one...
-0.7639256999827921 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001C51B582500>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001C51B5824A0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1, -1, -1]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001C51B5822F0>, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001C51B582D10>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([2560, 1440]), stencilBits=0, stereo=False, title='PsychoPy', units='pix', useFBO=False, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
-0.7639915000181645 	EXP 	window1: mouseVisible = True
-0.7640083997976035 	EXP 	window1: backgroundImage = None
-0.7640209000092 	EXP 	window1: backgroundFit = 'cover'
-0.7640342998784035 	INFO 	Mouse: using default window
-0.764065399998799 	EXP 	window1: mouseVisible = True
-0.7655999998096377 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
-0.7656227999832481 	EXP 	window1: recordFrameIntervals = False
-0.93043929990381 	EXP 	window1: recordFrameIntervals = True
-1.1140033998526633 	EXP 	Screen (0) actual frame rate measured at 59.95Hz
-1.114030199823901 	EXP 	window1: recordFrameIntervals = False
-1.1141377999447286 	EXP 	window1: mouseVisible = True
-1.1153015999589115 	EXP 	Created unnamed PhotoDiodeSquare = PhotoDiodeSquare(__class__=<class 'pptt.blocks.shapes.PhotoDiodeSquare'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, draggable=False, fillColor=array([255, 255, 255]), fillColorSpace='rgb', fillRGB=array([255, 255, 255]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([255, 255, 255]), lineWidth=1.5, name='unnamed PhotoDiodeSquare', opacity=1.0, ori=0.0, pos=array([1230., -670.]), size=array([100., 100.]), units='pix', vertices=ndarray(...), win=Window(...))
-1.115387799916789 	EXP 	window1: mouseVisible = True
-1.116361299995333 	EXP 	Created unnamed Square = Square(__class__=<class 'pptt.blocks.shapes.Square'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, draggable=False, fillColor=array([255, 255, 255]), fillColorSpace='rgb', fillRGB=array([255, 255, 255]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([255, 255, 255]), lineWidth=1.5, name='unnamed Square', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([144., 144.]), units='pix', vertices=ndarray(...), win=Window(...))
-1.116494899848476 	DATA 	Animated Square test started
-1.11650689993985 	DATA 	Number of iterations: 10000
-1.116514999885112 	DATA 	Trigger every: 100
-1.1165239999536425 	DATA 	Screen resolution: (2560, 1440)
-1.1165314000099897 	DATA 	Port address: 888
-1.1185729999560863 	DATA 	Trigger high (interval) scheduled at 1.1305816899053753
-1.1312215998768806 	DATA 	Trigger low scheduled at 1.1472626897972078
-2.7854454999323934 	DATA 	Trigger high (interval) scheduled at 2.8013715899083764
-2.801889499882236 	DATA 	Trigger low scheduled at 2.8180391899310053
-3.5356455999426544 	DATA 	Mouse: Left button down, pos=(990,381)
-3.536371399881318 	DATA 	Trigger high (mouse) scheduled at 3.5519810900092126
-3.5364008999895304 	DATA 	Mouse click at 2.419093200005591
-3.552590899867937 	DATA 	Trigger low scheduled at 3.5686567899771036
-3.6023250999860466 	DATA 	Mouse:  Left button up, pos=(990,381)
-4.035969999851659 	DATA 	Mouse: Left button down, pos=(990,381)
-4.03675189986825 	DATA 	Trigger high (mouse) scheduled at 4.052395289903506
-4.03678369987756 	DATA 	Mouse click at 0.49954650015570223
-4.053106899838895 	DATA 	Trigger low scheduled at 4.069090089900419
-4.45354409981519 	DATA 	Trigger high (interval) scheduled at 4.4694108899217095
-4.469983899965882 	DATA 	Trigger low scheduled at 4.486078589828685
-5.954186999937519 	DATA 	Mouse:  Left button up, pos=(990,381)
-6.121597699820995 	DATA 	Trigger high (interval) scheduled at 6.137443890003487
-6.138065899955109 	DATA 	Trigger low scheduled at 6.1541454898193475
-7.071922299917787 	DATA 	Mouse: Left button down, pos=(990,381)
-7.072716099908575 	DATA 	Trigger high (mouse) scheduled at 7.088234489923343
-7.072746400022879 	DATA 	Mouse click at 3.035116200102493
-7.088823099853471 	DATA 	Trigger low scheduled at 7.1049243899993595
-7.155230199918151 	DATA 	Mouse:  Left button up, pos=(990,381)
-7.789644399890676 	DATA 	Trigger high (interval) scheduled at 7.805511689884588
-7.806043999968097 	DATA 	Trigger low scheduled at 7.822174089867621
-9.074037599842995 	DATA 	Keypress: escape
-9.152460099896416 	EXP 	window1: mouseVisible = True
+0.0003340999992360594 	INFO 	Starting animated square test
+0.14106189999984053 	WARNING 	Monitor specification not found. Creating a temporary one...
+0.25683119999848714 	WARNING 	User requested fullscreen with size [2560 1440], but screen is actually [3072, 1728]. Using actual size
+0.8410887999998522 	DATA 	Keypress: space
+1.6663441999990027 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000186F18EAE60>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000186F18EAE00>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1, -1, -1]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000186F18EAC50>, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x00000186F3723AC0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([3072, 1728]), stencilBits=0, stereo=False, title='PsychoPy', units='pix', useFBO=False, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+1.6664463999986765 	EXP 	window1: mouseVisible = True
+1.6664643999993132 	EXP 	window1: backgroundImage = None
+1.66647759999978 	EXP 	window1: backgroundFit = 'cover'
+1.6664930999995704 	INFO 	Mouse: using default window
+1.6665399999983492 	EXP 	window1: mouseVisible = True
+1.6686058999985107 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+1.6686424999988958 	EXP 	window1: recordFrameIntervals = False
+1.8325397999997222 	EXP 	window1: recordFrameIntervals = True
+2.016053599998486 	EXP 	Screen (0) actual frame rate measured at 59.97Hz
+2.0160878999995475 	EXP 	window1: recordFrameIntervals = False
+2.0161037999987457 	DATA 	Refresh rate: 59.97109393297456
+2.016234599999734 	EXP 	window1: mouseVisible = True
+2.0175377999985358 	EXP 	Created unnamed PhotoDiodeSquare = PhotoDiodeSquare(__class__=<class 'pptt.blocks.shapes.PhotoDiodeSquare'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, draggable=False, fillColor=array([255, 255, 255]), fillColorSpace='rgb', fillRGB=array([255, 255, 255]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([255, 255, 255]), lineWidth=1.5, name='unnamed PhotoDiodeSquare', opacity=1.0, ori=0.0, pos=array([1486., -814.]), size=array([100., 100.]), units='pix', vertices=ndarray(...), win=Window(...))
+2.0176524999988033 	EXP 	window1: mouseVisible = True
+2.0187083999990136 	EXP 	Created unnamed Square = Square(__class__=<class 'pptt.blocks.shapes.Square'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, draggable=False, fillColor=array([255, 255, 255]), fillColorSpace='rgb', fillRGB=array([255, 255, 255]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([255, 255, 255]), lineWidth=1.5, name='unnamed Square', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([144., 144.]), units='pix', vertices=ndarray(...), win=Window(...))
+2.0188658999995823 	DATA 	Animated Square test started
+2.0188795999983995 	DATA 	Number of iterations: 10000
+2.018888099999458 	DATA 	Trigger every: 100
+2.0188980999992054 	DATA 	Screen resolution: (2560, 1440)
+2.018906999999672 	DATA 	Parallel port address: 0x378
+2.0209411999985605 	EXP 	Sound  started
+2.022939499998756 	DATA 	Trigger high (sound) scheduled at 2.032481179999377, state: [0, 0, 1, 0, 0, 0, 0, 0]
+2.02451579999979 	DATA 	Trigger high (interval) scheduled at 2.032481179999377, state: [1, 0, 1, 0, 0, 0, 0, 0]
+2.0505775999990874 	DATA 	Trigger low (interval) scheduled at 2.0656855799999905, state: [0, 0, 1, 0, 0, 0, 0, 0]
+2.0505980999987514 	DATA 	Trigger low (interval) scheduled at 2.0656855799999905, state: [0, 0, 0, 0, 0, 0, 0, 0]
+3.6838768999987224 	DATA 	Trigger high (interval) scheduled at 3.6990361799991662, state: [1, 0, 0, 0, 0, 0, 0, 0]
+3.716919599999528 	DATA 	Trigger low (interval) scheduled at 3.7324923799998944, state: [0, 0, 0, 0, 0, 0, 0, 0]
+3.999917999999525 	EXP 	Sound  stopped
+3.9999421999982587 	EXP 	Sound  started
+4.000234499999351 	DATA 	Trigger high (sound) scheduled at 4.01575987999895, state: [0, 0, 1, 0, 0, 0, 0, 0]
+4.033238599999095 	DATA 	Trigger low (interval) scheduled at 4.049107479998566, state: [0, 0, 0, 0, 0, 0, 0, 0]
+5.350553799999034 	DATA 	Trigger high (interval) scheduled at 5.365877279998313, state: [1, 0, 0, 0, 0, 0, 0, 0]
+5.383822899999359 	DATA 	Trigger low (interval) scheduled at 5.399266379999244, state: [0, 0, 0, 0, 0, 0, 0, 0]
+5.983463900000061 	EXP 	Sound  stopped
+5.983491999999387 	EXP 	Sound  started
+5.983785799999168 	DATA 	Trigger high (sound) scheduled at 5.999313079998683, state: [0, 0, 1, 0, 0, 0, 0, 0]
+6.0167434999984835 	DATA 	Trigger low (interval) scheduled at 6.032608179998715, state: [0, 0, 0, 0, 0, 0, 0, 0]
+7.017093499998737 	DATA 	Trigger high (interval) scheduled at 7.03269767999991, state: [1, 0, 0, 0, 0, 0, 0, 0]
+7.050170999998954 	DATA 	Trigger low (interval) scheduled at 7.066036679999525, state: [0, 0, 0, 0, 0, 0, 0, 0]
+7.967029599998568 	EXP 	Sound  stopped
+7.9670529999984865 	EXP 	Sound  started
+7.9673460999983945 	DATA 	Trigger high (sound) scheduled at 7.982888479998292, state: [0, 0, 1, 0, 0, 0, 0, 0]
+8.00027769999906 	DATA 	Trigger low (interval) scheduled at 8.016154779999123, state: [0, 0, 0, 0, 0, 0, 0, 0]
+8.683918099999573 	DATA 	Trigger high (interval) scheduled at 8.699514079998334, state: [1, 0, 0, 0, 0, 0, 0, 0]
+8.716982899999493 	DATA 	Trigger low (interval) scheduled at 8.732868279999092, state: [0, 0, 0, 0, 0, 0, 0, 0]
+9.88410969999859 	DATA 	Keypress: space
+9.950470299998415 	EXP 	Sound  stopped
+9.950493199999983 	EXP 	Sound  started
+9.950783299998875 	DATA 	Trigger high (sound) scheduled at 9.966321579998475, state: [0, 0, 1, 0, 0, 0, 0, 0]
+9.983737599999586 	DATA 	Trigger low (interval) scheduled at 9.99964147999999, state: [0, 0, 0, 0, 0, 0, 0, 0]
+10.350786099999823 	DATA 	Trigger high (interval) scheduled at 10.366391679998923, state: [1, 0, 0, 0, 0, 0, 0, 0]
+10.38384699999915 	DATA 	Trigger low (interval) scheduled at 10.399703179998323, state: [0, 0, 0, 0, 0, 0, 0, 0]
+10.516953499998635 	DATA 	Keypress: space
+10.83371839999927 	DATA 	Mouse: Left button down, pos=(984,929)
+10.83465729999989 	DATA 	Trigger high (mouse) scheduled at 10.849743479998505, state: [0, 1, 0, 0, 0, 0, 0, 0]
+10.834691899999598 	DATA 	Mouse click at 8.81478319999951
+10.867415799999435 	DATA 	Trigger low (interval) scheduled at 10.883121179999943, state: [0, 0, 0, 0, 0, 0, 0, 0]
+10.900341999999 	DATA 	Mouse:  Left button up, pos=(984,929)
+11.233763599999293 	DATA 	Mouse: Left button down, pos=(984,929)
+11.234841999999844 	DATA 	Trigger high (mouse) scheduled at 11.249896579999767, state: [0, 1, 0, 0, 0, 0, 0, 0]
+11.23487810000006 	DATA 	Mouse click at 0.39904399999977613
+11.267367899999954 	DATA 	Trigger low (interval) scheduled at 11.283196879999377, state: [0, 0, 0, 0, 0, 0, 0, 0]
+11.316858899999716 	DATA 	Mouse:  Left button up, pos=(984,929)
+11.66704639999989 	DATA 	Mouse: Left button down, pos=(984,929)
+11.667974299998605 	DATA 	Trigger high (mouse) scheduled at 11.683153079998373, state: [0, 1, 0, 0, 0, 0, 0, 0]
+11.668009199998778 	DATA 	Mouse click at 0.4321386999999959
+11.700616599999194 	DATA 	Trigger low (interval) scheduled at 11.716478479999932, state: [0, 0, 0, 0, 0, 0, 0, 0]
+11.716823799999474 	DATA 	Mouse:  Left button up, pos=(984,929)
+11.93396439999924 	EXP 	Sound  stopped
+11.934009299999161 	EXP 	Sound  started
+11.934303099998942 	DATA 	Trigger high (sound) scheduled at 11.94984767999922, state: [0, 0, 1, 0, 0, 0, 0, 0]
+11.967398899998443 	DATA 	Trigger low (interval) scheduled at 11.98319607999947, state: [0, 0, 0, 0, 0, 0, 0, 0]
+12.000283699999272 	DATA 	Mouse: Left button down, pos=(984,929)
+12.00121069999841 	DATA 	Trigger high (mouse) scheduled at 12.016479979999712, state: [0, 1, 0, 0, 0, 0, 0, 0]
+12.001245599998583 	DATA 	Mouse click at 0.33224589999917953
+12.0175679999993 	DATA 	Trigger high (interval) scheduled at 12.03317247999912, state: [1, 1, 0, 0, 0, 0, 0, 0]
+12.033992399999988 	DATA 	Trigger low (interval) scheduled at 12.049857479999627, state: [1, 0, 0, 0, 0, 0, 0, 0]
+12.050393799998346 	DATA 	Mouse:  Left button up, pos=(984,929)
+12.051064599998426 	DATA 	Trigger low (interval) scheduled at 12.066704179999942, state: [0, 0, 0, 0, 0, 0, 0, 0]
+12.150318399999378 	DATA 	Mouse: Left button down, pos=(984,929)
+12.151249799999277 	DATA 	Trigger high (mouse) scheduled at 12.16656017999885, state: [0, 1, 0, 0, 0, 0, 0, 0]
+12.15128469999945 	DATA 	Mouse click at 0.14904489999935322
+12.183966299999156 	DATA 	Trigger low (interval) scheduled at 12.199855379999644, state: [0, 0, 0, 0, 0, 0, 0, 0]
+12.200231999999232 	DATA 	Mouse:  Left button up, pos=(984,929)
+12.617069099998844 	DATA 	Mouse: Left button down, pos=(984,929)
+12.61801209999976 	DATA 	Trigger high (mouse) scheduled at 12.633309079999162, state: [0, 1, 0, 0, 0, 0, 0, 0]
+12.618047999998453 	DATA 	Mouse click at 0.46575640000082785
+12.650679599999421 	DATA 	Trigger low (interval) scheduled at 12.666583879999234, state: [0, 0, 0, 0, 0, 0, 0, 0]
+12.68373579999934 	DATA 	Mouse:  Left button up, pos=(984,929)
+13.083731400000033 	DATA 	Mouse: Left button down, pos=(984,929)
+13.084662699999171 	DATA 	Trigger high (mouse) scheduled at 13.09995417999853, state: [0, 1, 0, 0, 0, 0, 0, 0]
+13.084697599999345 	DATA 	Mouse click at 0.4656548000002658
+13.117594800000006 	DATA 	Trigger low (interval) scheduled at 13.13337517999862, state: [0, 0, 0, 0, 0, 0, 0, 0]
+13.13368779999837 	DATA 	Mouse:  Left button up, pos=(984,929)
+13.550512899999376 	DATA 	Mouse: Left button down, pos=(984,929)
+13.551427599999442 	DATA 	Trigger high (mouse) scheduled at 13.566712279999773, state: [0, 1, 0, 0, 0, 0, 0, 0]
+13.551461999999447 	DATA 	Mouse click at 0.46578819999922416
+13.584107599999697 	DATA 	Trigger low (interval) scheduled at 13.59998517999993, state: [0, 0, 0, 0, 0, 0, 0, 0]
+13.600424699998257 	DATA 	Mouse:  Left button up, pos=(984,929)
+13.684390999998868 	DATA 	Trigger high (interval) scheduled at 13.699986379998517, state: [1, 0, 0, 0, 0, 0, 0, 0]
+13.717446699998618 	DATA 	Trigger low (interval) scheduled at 13.733337279999613, state: [0, 0, 0, 0, 0, 0, 0, 0]
+13.73378059999959 	DATA 	Mouse: Left button down, pos=(984,929)
+13.734715899998264 	DATA 	Trigger high (mouse) scheduled at 13.749958879999394, state: [0, 1, 0, 0, 0, 0, 0, 0]
+13.734751099998903 	DATA 	Mouse click at 0.18229000000064843
+13.76748520000001 	DATA 	Trigger low (interval) scheduled at 13.7833860799994, state: [0, 0, 0, 0, 0, 0, 0, 0]
+13.783729799999492 	DATA 	Mouse:  Left button up, pos=(984,929)
+13.917182899998807 	DATA 	Mouse: Left button down, pos=(984,929)
+13.917839299998377 	EXP 	Sound  stopped
+13.917879799999355 	EXP 	Sound  started
+13.91817489999994 	DATA 	Trigger high (sound) scheduled at 13.933403379999799, state: [0, 0, 1, 0, 0, 0, 0, 0]
+13.918482699999004 	DATA 	Trigger high (mouse) scheduled at 13.933403379999799, state: [0, 1, 1, 0, 0, 0, 0, 0]
+13.918516499999896 	DATA 	Mouse click at 0.1824032000004081
+13.951023799998438 	DATA 	Trigger low (interval) scheduled at 13.966760179998527, state: [0, 0, 1, 0, 0, 0, 0, 0]
+13.951041699998314 	DATA 	Trigger low (interval) scheduled at 13.966760179998527, state: [0, 0, 0, 0, 0, 0, 0, 0]
+13.96713490000002 	DATA 	Mouse:  Left button up, pos=(984,929)
+15.017411299999367 	DATA 	Mouse: Left button down, pos=(979,926)
+15.018371399999523 	DATA 	Trigger high (mouse) scheduled at 15.033448379999026, state: [0, 1, 0, 0, 0, 0, 0, 0]
+15.018406799999866 	DATA 	Mouse click at 1.0988649999999325
+15.051029399999607 	DATA 	Trigger low (interval) scheduled at 15.066875079998862, state: [0, 0, 0, 0, 0, 0, 0, 0]
+15.351327899999887 	DATA 	Trigger high (interval) scheduled at 15.366843080000034, state: [1, 0, 0, 0, 0, 0, 0, 0]
+15.384276199998567 	DATA 	Trigger low (interval) scheduled at 15.400178779999987, state: [0, 0, 0, 0, 0, 0, 0, 0]
+15.51725709999846 	DATA 	Mouse:  Left button up, pos=(979,926)
+15.901003399998444 	EXP 	Sound  stopped
+15.901027500000055 	EXP 	Sound  started
+15.90131879999899 	DATA 	Trigger high (sound) scheduled at 15.916855679998843, state: [0, 0, 1, 0, 0, 0, 0, 0]
+15.934405799998785 	DATA 	Trigger low (interval) scheduled at 15.95029257999995, state: [0, 0, 0, 0, 0, 0, 0, 0]
+16.5339886999991 	DATA 	Mouse: Left button down, pos=(979,926)
+16.534897499999715 	DATA 	Trigger high (mouse) scheduled at 16.55025977999976, state: [0, 1, 0, 0, 0, 0, 0, 0]
+16.53495329999896 	DATA 	Mouse click at 1.5155539000006684
+16.56776069999978 	DATA 	Trigger low (interval) scheduled at 16.58364987999921, state: [0, 0, 0, 0, 0, 0, 0, 0]
+17.018042499999865 	DATA 	Trigger high (interval) scheduled at 17.03366377999846, state: [1, 0, 0, 0, 0, 0, 0, 0]
+17.051076899999316 	DATA 	Trigger low (interval) scheduled at 17.066973079999297, state: [0, 0, 0, 0, 0, 0, 0, 0]
+17.88454229999843 	EXP 	Sound  stopped
+17.884565599999405 	EXP 	Sound  started
+17.88487179999902 	DATA 	Trigger high (sound) scheduled at 17.900419379998493, state: [0, 0, 1, 0, 0, 0, 0, 0]
+17.918074299999716 	DATA 	Trigger low (interval) scheduled at 17.933805079999, state: [0, 0, 0, 0, 0, 0, 0, 0]
+18.684829699999682 	DATA 	Trigger high (interval) scheduled at 18.700441479998698, state: [1, 0, 0, 0, 0, 0, 0, 0]
+18.71793549999893 	DATA 	Trigger low (interval) scheduled at 18.733811179999247, state: [0, 0, 0, 0, 0, 0, 0, 0]
+19.45098489999873 	DATA 	Mouse:  Left button up, pos=(979,926)
+19.868011999999 	EXP 	Sound  stopped
+19.868035699999382 	EXP 	Sound  started
+19.8683207999984 	DATA 	Trigger high (sound) scheduled at 19.88387777999851, state: [0, 0, 1, 0, 0, 0, 0, 0]
+19.90133269999933 	DATA 	Trigger low (interval) scheduled at 19.91721977999914, state: [0, 0, 0, 0, 0, 0, 0, 0]
+20.351962699998694 	DATA 	Trigger high (interval) scheduled at 20.36729997999937, state: [1, 0, 0, 0, 0, 0, 0, 0]
+20.385121699999218 	DATA 	Trigger low (interval) scheduled at 20.400615579999066, state: [0, 0, 0, 0, 0, 0, 0, 0]
+20.80117859999882 	DATA 	Keypress: escape
+21.193907399998352 	EXP 	window1: mouseVisible = True
+21.19810359999974 	EXP 	Sound  stopped

@@ -1,20 +1,21 @@
 """Shapes and shape animations"""
-from psychopy.visual.rect import Rect
-from psychopy.visual.window import Window
-from psychopy.visual.shape import BaseShapeStim
+
+from psychopy.visual.rect import Rect  # type: ignore
+from psychopy.visual.window import Window  # type: ignore
+from psychopy.visual.shape import BaseShapeStim  # type: ignore
 from typing import Literal
 
 
 class Square(Rect):
     def __init__(self, win: Window, size: int, pos: tuple[int, int], color: tuple[int, int, int]):
-        super().__init__(win, width=size, height=size, pos=pos, fillColor=color, lineColor=color)
+        super().__init__(win, width=size, height=size, pos=pos, fillColor=color, lineColor=color)  # type: ignore
 
     def draw(self):
         super().draw()
 
 
 class PhotoDiodeSquare(Square):
-    def __init__(self, win: Window, size: int, corner: Literal['tl'] | Literal['tr'] | Literal['bl'] | Literal['br'] = 'br' , color: tuple[int, int, int] = (255, 255, 255)):
+    def __init__(self, win: Window, size: int, corner: Literal['tl', 'tr', 'bl', 'br'] = 'br' , color: tuple[int, int, int] = (255, 255, 255)):
         if corner == 'tl':
             pos = (-win.size[0]/2 + size/2, win.size[1]/2 - size/2)
         elif corner == 'tr':
@@ -62,7 +63,7 @@ class EaseInEaseOut(BaseShapeStim):
         self.shape.draw()
         
 
-    def ease_in_out(self, t: float, b: tuple[int, int], c: tuple[int, int], d: float) -> tuple[int, int]:
+    def ease_in_out(self, t: float, b: tuple[int, int], c: tuple[int, int], d: float) -> tuple[float, float]:
         t /= d / 2
         if t < 1:
             return (c[0] - b[0]) / 2 * t * t + b[0], (c[1] - b[1]) / 2 * t * t + b[1]
@@ -94,4 +95,3 @@ class BounceHorizontal(EaseInEaseOut):
 class BounceVertical(EaseInEaseOut):
     def __init__(self, win: Window, shape: BaseShapeStim, start_x: int, end_x: int, duration: float, repeat: bool = True):
         super().__init__(win, shape, (start_x, shape.pos[1]), (end_x, shape.pos[1]), duration, repeat)
-

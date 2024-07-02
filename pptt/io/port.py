@@ -2,6 +2,7 @@
 
 from abc import ABC, abstractmethod
 import asyncio
+from typing import Literal
 from psychopy import parallel  # type: ignore
 from serial import Serial  # type: ignore
 
@@ -51,6 +52,25 @@ class ParallelPort(Port):
             duration: The duration of the trigger signal.
         """
         self.port.setData(trigger_code)
+    
+    def set_pin(self, pin: Literal[1, 2, 3, 4, 5, 6, 7, 8], value: Literal[0, 1]):
+        """Sets a bit of the parallel port.
+        
+        Args:
+            bit: The bit to set.
+            value: The value to set the bit to.
+        """
+        self.port.setData(self.port.getData() | (value << pin) - 1)
+    
+    def set_pins(self, pins: list[Literal[0, 1]]):
+        """Sets all bits of the parallel port.
+        
+        Args:
+            pins: The values to set the bits to.
+        """
+        if len(pins) != 8:
+            raise ValueError("pins must be a list of 8 bits")
+        self.port.setData(int(''.join(map(str, pins)), 2))
 
     async def asend_trigger(self, trigger_code: int, duration: float = 0.001):
         """Sends a trigger signal to the EEG system.
