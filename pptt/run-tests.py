@@ -1,10 +1,16 @@
+
 import argparse
 import asyncio
 from pathlib import Path
 import sys
 import os
+# Add the parent directory to the path so we can import pptt
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+from pptt.config import set_psychopy_prefs
+set_psychopy_prefs()
 from psychopy import logging  # type: ignore
 from psychopy.core import Clock  # type: ignore
+
 
 
 def parse_args():
@@ -15,6 +21,7 @@ def parse_args():
     parser.add_argument('--speaker-volume', '-v', default=0.5, type=float, help='Volume of the speaker device to use.')
     parser.add_argument('--speaker-sample-rate', '-r', default=44100, type=int, help='Latency of the speaker device to use.')
     parser.add_argument('--microphone', '-m', type=int, help='Name of the microphone device to use.')
+    parser.add_argument('--microphone-channels', '-c', type=int, default=1, help='Number of channels of the microphone device to use.')
     parser.add_argument('--microphone-sample-rate', '-z', type=int, default=44100, help='Sample rate of the microphone device to use.')
     parser.add_argument('--num-iter', '-n', type=int, default=10000, help='Number of iterations (~= frames) to run the test.')
     parser.add_argument('--trigger-every', '-t', type=int, default=100, help='Trigger high every N iterations.')
@@ -27,8 +34,7 @@ def parse_args():
 
 
 async def main():
-    # Add the parent directory to the path so we can import pptt
-    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    
 
     args = parse_args()
     if args.list_devices:
@@ -40,6 +46,7 @@ async def main():
             print(f'{device["index"]:>10,g}: {device["deviceName"]}')
         print('Microphones:')
         for device in device_manager.getAvailableDevices('psychopy.hardware.microphone.MicrophoneDevice'):
+            print(device)
             print(f'{device["index"]:>10,g}: {device["deviceName"]}')
         return
 
@@ -61,6 +68,7 @@ async def main():
             speaker_volume=args.speaker_volume,
             speaker_sr=args.speaker_sample_rate,
             microphone_device=args.microphone,
+            microphone_channels=args.microphone_channels,
             microphone_sr=args.microphone_sample_rate,
             data_dir=args.out_dir,
             res=args.screen_res,

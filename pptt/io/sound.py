@@ -83,11 +83,12 @@ class Note:
 class Mic:
     """Class for microphone recording."""
 
-    def __init__(self, sr: int = 44100, output_folder: Path = Path(os.getcwd()) / "recordings", device: int | None = None):
+    def __init__(self, sr: int = 44100, channels: int = 1, output_folder: Path = Path(os.getcwd()) / "recordings", device: int | None = None):
         """Initializes the microphone.
         
         Args:
             sr: The sample rate of the recording.
+            channels: The number of channels of the recording.
             output_folder: The folder to save the recordings to.
             device: The microphone device to use.
         """
@@ -108,7 +109,7 @@ class Mic:
         self.mic = Microphone(
             device=device,
             sampleRateHz=sr,
-            channels=1,
+            channels=channels,
             streamBufferSecs=5.0,
             recordingFolder=output_folder,
         )

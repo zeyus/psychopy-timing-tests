@@ -24,6 +24,7 @@ async def animated_square(
         speaker_volume: float = 0.5,
         speaker_device: int | None = None,
         microphone_sr: int = 44100,
+        microphone_channels: int = 1,
         microphone_device: int | None = None,
         data_dir: Path = Path('data'),
         trigger_square_pos: Literal['tl', 'tr', 'bl', 'br'] = 'br'):
@@ -47,6 +48,8 @@ async def animated_square(
         Speaker device index.
     microphone_sr : int
         Microphone sample rate.
+    microphone_channels : int
+        Number of microphone channels.
     microphone_device : int | None
         Microphone device index.
     data_dir : Path
@@ -145,6 +148,7 @@ async def animated_square(
     # start mic
     mic = Mic(
         sr=microphone_sr,
+        channels=microphone_channels,
         device=microphone_device)
     logging.data('Starting microphone')
     mic.record(exp_runtime + 1.0)  # type: ignore
