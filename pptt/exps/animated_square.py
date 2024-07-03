@@ -25,7 +25,8 @@ async def animated_square(
         speaker_device: int | None = None,
         microphone_sr: int = 44100,
         microphone_device: int | None = None,
-        data_dir: Path = Path('data')):
+        data_dir: Path = Path('data'),
+        trigger_square_pos: Literal['tl', 'tr', 'bl', 'br'] = 'br'):
     """Animate a square moving horizontally and bouncing off the edges of the screen.
 
     Parameters
@@ -50,6 +51,8 @@ async def animated_square(
         Microphone device index.
     data_dir : Path
         Directory to save data files to.
+    trigger_square_pos : Literal['tl', 'tr', 'bl', 'br']
+        Location of the photodiode square.
     """
 
     # set up data logging
@@ -73,7 +76,7 @@ async def animated_square(
     # set pin high time to one frame
     pin_high_frames = 1
 
-    timing_marker = PhotoDiodeSquare(win, 100, 'br', (255, 255, 255))
+    timing_marker = PhotoDiodeSquare(win, 100, trigger_square_pos, (255, 255, 255))
     # square should be in the middle of the screen vertically
     square = Square(win, res[1] // 10, (0, 0), (255, 255, 255))
     bounce = BounceHorizontal(win, square, -(res[0]//2), res[0]//2, 5.0, True)
@@ -130,7 +133,9 @@ async def animated_square(
             'speaker_volume': speaker_volume,
             'speaker_device': speaker_device,
             'microphone_sr': microphone_sr,
-            'microphone_device': microphone_device
+            'microphone_device': microphone_device,
+            'data_dir': data_dir,
+            'trigger_square_pos': trigger_square_pos,
         },
         trialList=list({'idx': i} for i in range(num_iter)), # this shouldn't need all of them but we don't know which frame something occurs in
         name='animated_square'

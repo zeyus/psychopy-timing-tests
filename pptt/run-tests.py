@@ -8,6 +8,7 @@ from psychopy.core import Clock  # type: ignore
 
 
 def parse_args():
+    photodiode_locations = ['tl', 'tr', 'bl', 'br']
     parser = argparse.ArgumentParser(description='Run PsychoPy timing tests.')
     parser.add_argument('--list-devices', '-l', action='store_true', help='List available audio devices (speakers and microphones).')
     parser.add_argument('--speaker', '-s', type=int, help='Name of the speaker device to use.')
@@ -20,6 +21,7 @@ def parse_args():
     parser.add_argument('--port-addr', '-p', type=lambda x: int(x, 0), default=0x378, help='Address of the parallel port.')
     parser.add_argument('--screen-res', '-x', type=lambda x: tuple(map(int, x.split(','))), default=(2560, 1440), help='Screen resolution (width, height).')
     parser.add_argument('--out-dir', '-o', type=Path, default=Path('data'), help='Output directory for data files and recordings.')
+    parser.add_argument('--photodiode-location', '-d', type=str, default='br', choices=photodiode_locations, help='Location of the photodiode.')
 
     return parser.parse_args()
 
@@ -61,6 +63,8 @@ async def main():
             microphone_device=args.microphone,
             microphone_sr=args.microphone_sample_rate,
             data_dir=args.out_dir,
+            res=args.screen_res,
+            trigger_square_pos=args.photodiode_location
         )
 
 
