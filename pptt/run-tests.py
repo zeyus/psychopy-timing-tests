@@ -58,7 +58,7 @@ async def main():
         logging.root.format="{t} \t{levelname} \t{message}"
         logging.setDefaultClock(studyClock)
         
-        logger = logging.LogFile(args.out_dir / 'animated_square.log', level=logging.INFO, filemode='w')
+        logger = logging.LogFile(args.out_dir / 'animated_square.log', level=logging.INFO, filemode='a')
         logging.info('Starting animated square test')
         await animated_square(
             num_iter=args.num_iter,

@@ -232,7 +232,14 @@ async def animated_square(
     logging.data('Stopping microphone')
     mic.stop()
     logging.data('Saving microphone clips')
-    mic.save('animated_square.wav')
+    mic_out_file = data_dir / 'mic_recording.wav'
+    if mic_out_file.exists():
+        # add a number to the end of the file name
+        i = 1
+        while mic_out_file.exists():
+            mic_out_file = data_dir / f'mic_recording_{i}.wav'
+            i += 1
+    mic.save(mic_out_file)
 
     # filter trial data
     trial_data.trialList = [trial_data.trialList[i] for i in sorted(data_indices)]
