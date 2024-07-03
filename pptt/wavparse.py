@@ -1,11 +1,11 @@
 """Finds clicks in a wave-file and writes their timestamps, sample index and other data to a CSV file."""
 import argparse
-import csv
 import logging
 
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 from scipy.io import wavfile  # type: ignore
 from scipy.signal import find_peaks, butter, filtfilt, stft  # type: ignore
 
@@ -43,14 +43,15 @@ def bandpass_filter(data: np.ndarray, lowcut: float, highcut: float, fs: float, 
 def find_clicks(
         wav_file: Path,
         threshold: float,
-        out_dir: Path,
+        out_dir: Path | None = None,
         distance: int = 50,
         normalize: bool = True,
         filter: bool = True,
-        lowcut: float = 3500,
-        highcut: float = 16000,
+        lowcut: float = 5500,
+        highcut: float = 20000,
         order: int = 5,
-        prominence: float = 8):
+        prominence: float = 10,
+        save_data: bool = True) -> pd.DataFrame | None:
     """Finds clicks in a wave-file and writes their timestamps, sample index and other data to a CSV file.
 
     Parameters
@@ -75,6 +76,8 @@ def find_clicks(
         Order of the filter.
     prominence : float
         Prominence of the peaks.
+    save_data : bool
+        Whether to save the clicks to a CSV file, images and wavs.
     """
     # Load the wave-file
     sample_rate, data = wavfile.read(wav_file)
@@ -92,56 +95,75 @@ def find_clicks(
         data = data / np.max(np.abs(data))
     
     # save the filtered and normalized data
-    out_file = out_dir / f'{wav_file.stem}_filtered_normalized.wav'
-    wavfile.write(out_file, sample_rate, data)
+    if save_data and out_dir is not None:
+        out_file = out_dir / f'{wav_file.stem}_filtered_normalized.wav'
+        wavfile.write(out_file, sample_rate, data)
     # apply short-time Fourier transform
     f, t, Zxx = stft(data, fs=sample_rate, nperseg=int(0.01*sample_rate))
 
     amp_spec = np.abs(Zxx)
 
-    # plot the amplitude spectrogram
-    plt.pcolormesh(t, f, amp_spec, shading='gouraud')
-    plt.ylabel('Frequency [Hz]')
-    plt.xlabel('Time [sec]')
-    plt.title('Amplitude spectrogram')
-    plt.colorbar()
-    plt.savefig(out_dir / f'{wav_file.stem}_amp_spec.png')
+    if save_data and out_dir is not None:
+        # plot the amplitude spectrogram
+        plt.pcolormesh(t, f, amp_spec, shading='gouraud')
+        plt.ylabel('Frequency [Hz]')
+        plt.xlabel('Time [sec]')
+        plt.title('Amplitude spectrogram')
+        plt.colorbar()
+        plt.savefig(out_dir / f'{wav_file.stem}_amp_spec.png')
 
-
-    print(np.max(amp_spec))
     thresh = threshold * np.max(amp_spec)
     mask = amp_spec > thresh
     ts = np.sum(mask, axis=0)
 
     logging.info(f'Threshold: {thresh}')
 
-    # Plot the time series
-    plt.figure(figsize=(12, 6))
-    plt.plot(t, ts, label='Summed Frequency Bins')
-    plt.xlabel('Time [sec]')
-    plt.ylabel('Summed Magnitude')
-    plt.title('Summed Magnitude Time Series')
-    plt.savefig(out_dir / f'{wav_file.stem}_time_series.png')
+    if save_data and out_dir is not None:
+        # Plot the time series
+        plt.figure(figsize=(12, 6))
+        plt.plot(t, ts, label='Summed Frequency Bins')
+        plt.xlabel('Time [sec]')
+        plt.ylabel('Summed Magnitude')
+        plt.title('Summed Magnitude Time Series')
+        plt.savefig(out_dir / f'{wav_file.stem}_time_series.png')
 
     
-
     # Find the clicks
     peaks, peak_props = find_peaks(ts, prominence=prominence, distance=distance)
     logging.info(f'Found {len(peaks)} clicks.')
 
+    data_out: dict[str, list[str | None | float | int]] = {
+        'timestamp': [],
+        'sample_index': [],
+        'frequency': [],
+        'amplitude': [],
+        'prominence': [],
+        'left_base': [],
+        'right_base': []
+    }
+
+    for i, peak in enumerate(peaks):
+        timestamp = t[peak]
+        freq = f[np.argmax(amp_spec[:, peak])]
+        amp = np.max(amp_spec[:, peak])
+        data_out['timestamp'].append(timestamp)
+        data_out['sample_index'].append(peak)
+        data_out['frequency'].append(freq)
+        data_out['amplitude'].append(amp)
+        data_out['prominence'].append(peak_props['prominences'][i])
+        data_out['left_base'].append(peak_props['left_bases'][i])
+        data_out['right_base'].append(peak_props['right_bases'][i])
+    
+    df_out = pd.DataFrame(data_out)
+
     # Write the clicks to a CSV file
-    out_file = out_dir / f'{wav_file.stem}_clicks.csv'
-    with open(out_file, 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(['timestamp', 'sample_index', 'frequency', 'amplitude', 'prominence', 'left_base', 'right_base'])
-        for i, peak in enumerate(peaks):
-            timestamp = t[peak]
-            freq = f[np.argmax(amp_spec[:, peak])]
-            amp = np.max(amp_spec[:, peak])
-            writer.writerow([timestamp, peak, freq, amp, peak_props['prominences'][i], peak_props['left_bases'][i], peak_props['right_bases'][i]])
-
-    logging.info(f'Wrote clicks to {out_file}.')
-
+    if save_data and out_dir is not None:
+        logging.info(f'Writing clicks to {out_dir}.')
+        out_file = out_dir / f'{wav_file.stem}_clicks.csv'
+        df_out.to_csv(out_file, index=False)
+        logging.info(f'Wrote clicks to {out_file}.')
+    
+    return df_out
 
 
 

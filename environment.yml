@@ -7,7 +7,14 @@ dependencies:
   - pip
   - mamba
   - pip:
+    - ipykernel
+    - ipyfilechooser
+    - ipympl
+    - ipywidgets
+    - jupyter
+    - mne
     - numpy==1.26.4
+    - pandas
     - psychtoolbox
     - psychopy
     - psychopy-sounddevice
