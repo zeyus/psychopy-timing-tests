@@ -46,7 +46,6 @@ async def main():
             print(f'{device["index"]:>10,g}: {device["deviceName"]}')
         print('Microphones:')
         for device in device_manager.getAvailableDevices('psychopy.hardware.microphone.MicrophoneDevice'):
-            print(device)
             print(f'{device["index"]:>10,g}: {device["deviceName"]}')
         return
 

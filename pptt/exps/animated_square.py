@@ -2,7 +2,7 @@
 
 from math import floor, ceil
 from pathlib import Path
-from typing import Literal
+from typing import Coroutine, Literal
 
 import numpy as np
 
@@ -27,7 +27,7 @@ async def animated_square(
         microphone_channels: int = 1,
         microphone_device: int | None = None,
         data_dir: Path = Path('data'),
-        trigger_square_pos: Literal['tl', 'tr', 'bl', 'br'] = 'br'):
+        trigger_square_pos: Literal['tl', 'tr', 'bl', 'br'] = 'br') -> Coroutine[None, None, None]:
     """Animate a square moving horizontally and bouncing off the edges of the screen.
 
     Parameters
@@ -262,3 +262,4 @@ async def animated_square(
     logging.info('Data saved to ' + str(data_file))
     logging.data('Animated Square test ended')
     
+    return  # type: ignore
